@@ -28,6 +28,8 @@ pub fn main() !void {
     var reader = file.reader();
     var buf: [1024]u8 = undefined;
     while (reader.readUntilDelimiter(&buf, '\n')) |line| {
+
+        // split on ";" to get city, temp
         var parts = mem.splitSequence(u8, line, ";");
         const first_part = mem.trim(u8, parts.first(), " ");
         const city = try allocator.alloc(u8, first_part.len);
@@ -52,18 +54,19 @@ pub fn main() !void {
             count.value_ptr.* = 1;
         }
     } else |err| {
-        if (err == error.EndOfStream) {
-            var it = totals.iterator();
-            while (it.next()) |entry| {
-                const city = entry.key_ptr.*;
-                const total = entry.value_ptr.*;
-                const count = counts.get(city).?;
-                const avg = total / @as(f32, @floatFromInt(count));
-
-                print("{s}: {}\n", .{ entry.key_ptr.*, avg });
-            }
-        } else {
+        if (err == error.EndOfStream) {} else {
             unreachable;
         }
+    }
+
+    // output results
+    var it = totals.iterator();
+    while (it.next()) |entry| {
+        const city = entry.key_ptr.*;
+        const total = entry.value_ptr.*;
+        const count = counts.get(city).?;
+        const avg = total / @as(f32, @floatFromInt(count));
+
+        print("{s}: {}\n", .{ entry.key_ptr.*, avg });
     }
 }
