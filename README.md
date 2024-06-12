@@ -11,9 +11,10 @@ The output of the results should be sent to stdout with the following format for
 
 ## Results
 
-|  submission   | time (secs)   |
+|  submission   | time          |
 | ------------- | ------------- |
 | simple_python | 14.816s       |
+| simple_zig    | 2m57.833s     |
 
 ## How to submit an entry
 
