@@ -1,6 +1,11 @@
 # 1brc-mini-bench
-Benchmark 1brc challenge but with only 10M data rows, just calculate the average
-temperature for each city and output the results to stdout wwith the following format:
+
+Benchmark 1brc challenge but with following simplified rules:
+
+1. Only 10M data rows located in <a href="blob/main/data/measurements-10000000.txt">data/measurements-10000000.txt</div>
+2. Just calculate the average temp for each city.
+
+The output of the results should be sent to stdout with the following format for each city separated by newline:
 
     city: averageTemp
 
