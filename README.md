@@ -9,13 +9,13 @@ The output of the results should be sent to stdout with the following format for
 
     city: averageTemp
 
-# Results
+## Results
 
 |  submission   | time (secs)   |
 | ------------- | ------------- |
 | simple_python | 14.816s       |
 
-# How to submit an entry
+## How to submit an entry
 
 1. Checkout repo
 2. Create directory under `submissions/<name_of_submission>`
