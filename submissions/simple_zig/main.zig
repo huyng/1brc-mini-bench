@@ -25,9 +25,9 @@ pub fn main() !void {
     const file = try cwd.openFile("../../data/measurements-10000000.txt", .{ .mode = .read_only });
     defer file.close();
 
-    // var reader = file.reader();
-    // var br = io.bufferedReader(file.reader());
-    var reader = io.bufferedReader(file.reader()).reader();
+    const fr = file.reader();
+    var br = io.bufferedReader(fr);
+    var reader = br.reader();
     var buf: [1024]u8 = undefined;
     while (reader.readUntilDelimiter(&buf, '\n')) |line| {
 
