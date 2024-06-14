@@ -15,6 +15,7 @@ The output of the results should be sent to stdout with the following format for
 | ------------- | ------------- |
 | simple_python | 14.816s       |
 | simple_zig    | 2.045s        |
+| simple_go     | 2.568s        |
 
 ## How to submit an entry
 
