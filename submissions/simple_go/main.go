@@ -11,6 +11,7 @@ import (
 
 func main() {
 
+	// make hashmaps to hold total temp and num entries per city
 	totals := make(map[string]float32)
 	counts := make(map[string]int32)
 
@@ -39,6 +40,7 @@ func main() {
 
 	}
 
+	// print out results
 	for city := range totals {
 		total := totals[city]
 		count := counts[city]
